@@ -1,0 +1,8 @@
+{
+  "name": "pending-with-presley",
+  "version": "1.0.0",
+  "description": "Presley Angle — real estate landing page",
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest"
+  }
+}
