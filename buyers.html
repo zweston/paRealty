@@ -164,6 +164,13 @@
     .lead-form__submit:disabled     { opacity: 0.5; cursor: not-allowed; }
     .lead-form__submit:disabled:hover { background: var(--color-ink); }
 
+    .lead-form__error {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: #8b3a3a;
+      margin-top: var(--space-sm);
+    }
+
     /* ── Success ────────────────────────────────────────────────── */
     .lead-success {
       display: none;
@@ -229,17 +236,17 @@
 
       .page__photo {
         position: relative;
-        height: auto;
-        aspect-ratio: 2 / 3;
+        height: 40vw;
+        overflow: hidden;
       }
 
       .page__content {
         border-left: none;
         border-top: 1px solid var(--color-rule);
-        padding: var(--space-2xl) var(--space-lg);
+        padding: var(--space-lg) var(--space-lg) var(--space-2xl);
       }
 
-      .page__wordmark { margin-bottom: var(--space-md); }
+      .page__wordmark { margin-bottom: var(--space-sm); }
     }
 
     @media (max-width: 30rem) {
@@ -301,28 +308,7 @@
     </div>
   </div>
 
-  <script>
-    const form    = document.getElementById('lead-form');
-    const success = document.getElementById('lead-success');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('.lead-form__submit');
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-
-      try {
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString(),
-        });
-      } catch {}
-
-      form.style.display = 'none';
-      success.classList.add('is-visible');
-    });
-  </script>
+  <script src="lead-form.js"></script>
 
 </body>
 </html>
