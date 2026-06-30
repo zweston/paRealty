@@ -257,6 +257,32 @@
     @media (max-width: 30rem) {
       .page__contact { flex-direction: column; gap: var(--space-xs); }
     }
+
+    /* ── Small phones (iPhone SE, ≤384px) ──────────────────────── */
+    @media (max-width: 24rem) {
+      .page__photo       { height: 35vw; }
+
+      .page__content {
+        padding: var(--space-sm) var(--space-md) var(--space-lg);
+        gap: var(--space-2xs);
+      }
+
+      .page__wordmark    { margin-bottom: 0; }
+      .page__eyebrow     { margin-bottom: var(--space-sm); }
+
+      .page__headline {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-xs);
+      }
+
+      .page__body {
+        font-size: var(--text-base);
+        line-height: 1.45;
+      }
+
+      .lead-form__input  { padding: var(--space-sm) 0; }
+      .lead-form__submit { padding: var(--space-sm) var(--space-xl); }
+    }
   </style>
 </head>
 <body>
